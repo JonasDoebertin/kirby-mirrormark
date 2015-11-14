@@ -158,7 +158,7 @@ class MarkdownField extends InputField {
             (1) Load language files
          */
         $baseDir = __DIR__ . DS . self::LANG_DIR . DS;
-        $lang    = panel()->language();
+        $lang    = panel()->translation()->code()
         if(file_exists($baseDir . $lang . '.php'))
         {
             $this->translation = include $baseDir . $lang . '.php';
