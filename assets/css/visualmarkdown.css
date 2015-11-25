@@ -192,7 +192,7 @@
         vertical-align: top;
     }
 
-    .markdownfield-wrapper .visualmarkdown-toolbar > li.visualmarkdown-action-header2 a {
+    .markdownfield-wrapper .visualmarkdown-toolbar > li.visualmarkdown-action-header2 button {
         font-family: Georgia, Garamond, serif;
         font-size: 18px;
     }
@@ -216,7 +216,7 @@
         margin-right: 40px;
     }
 
-        .markdownfield-wrapper .visualmarkdown-toolbar > li > a {
+        .markdownfield-wrapper .visualmarkdown-toolbar > li > button {
         	color: #8d9194;
         	cursor: pointer;
         	display: block;
@@ -226,9 +226,11 @@
         	text-align: center;
         	transition: color .2s linear;
         	width: 40px;
+        	background: transparent;
+                border: none;
         }
 
-        .markdownfield-wrapper .visualmarkdown-toolbar > li:hover > a {
+        .markdownfield-wrapper .visualmarkdown-toolbar > li:hover > button {
         	color: #000000;
         }
 
@@ -262,7 +264,7 @@
                 border-top: 1px solid #efefef;
             }
 
-                .markdownfield-wrapper .visualmarkdown-toolbar ul li a {
+                .markdownfield-wrapper .visualmarkdown-toolbar ul li button {
                     color: #74787a;
                 	cursor: pointer;
                 	display: block;
@@ -274,7 +276,7 @@
                     padding: 0 1em;
                 }
 
-                .markdownfield-wrapper .visualmarkdown-toolbar ul li:hover a {
+                .markdownfield-wrapper .visualmarkdown-toolbar ul li:hover button {
                     color: #000000;
                 }
 

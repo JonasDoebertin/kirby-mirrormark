@@ -388,7 +388,7 @@ var VisualMarkdownEditor = function($, $element, options) {
 
             // Generate elements
             $item   = $('<li>').addClass('visualmarkdown-action-' + tool.action);
-            $anchor = $('<a>');
+            $anchor = $('<button>');
 
             if(($.inArray(tool.action, self.options.tools) === -1)
                && ($.inArray(tool.action, alwaysVisibleItems) === -1)) {
