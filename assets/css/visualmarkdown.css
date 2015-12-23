@@ -311,9 +311,10 @@
         right: 1.5em;
         background: #fff;
         box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px;
-        overflow: auto;
         padding: 1.5em 2em 2em;
         z-index: 2;
+        max-height: 95%;
+        overflow-y: scroll;
         border-radius: 3px;
         -webkit-transform: translate(0, -50%);
            -moz-transform: translate(0, -50%);
@@ -371,8 +372,59 @@
         padding: 0;
     }
 
+/**
+ * PAGE LINK
+ */
+.visualmarkdown-modal .pages {
+  padding: .25em;
+  background-color: #efefef;
+  width: 100%;
+}
+.visualmarkdown-modal .rootpages {
+  background-color: white;
+}
+  .visualmarkdown-modal .pages .page  {
+    border-bottom: 1px solid rgba(0, 0, 0, .075);
+    width: 100%;
+  }
+    .visualmarkdown-modal .pages .page .pagename {
+      width: 100%;
+      display: table;
+    }
+      .visualmarkdown-modal .pages .page .pagename span.name {
+        padding: 0.75em 1em;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .visualmarkdown-modal .pages .page .pagename span.smallbox {
+        padding: 0.75em 1em;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        width: 3.5em;
+        border-left: 1px solid rgba(0, 0, 0, .075);
+        font-weight: bold;
+      }
+      
+       .visualmarkdown-modal .pages .page .pagename span.slidedown.open i {
+         transform: rotate(-180deg);
+       }
+      
+      .visualmarkdown-modal .pages .page span.smalllink.active:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+      }
 
+.visualmarkdown-modal .subpages {
+  padding: 0;
+  margin-bottom: 0;
+  display: none;
+}
 
+  
+    
+  
 /**
  * FULLSCREEN MODE
  */

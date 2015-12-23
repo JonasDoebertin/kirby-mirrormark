@@ -37,7 +37,8 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
      * All available modals
      */
     this.modals = {
-        shortcuts: $('[data-visualmarkdown-modal=shortcuts]')
+        shortcuts: $('[data-visualmarkdown-modal=shortcuts]'),
+        pagelink:  $('[data-visualmarkdown-modal=pagelink]')
     };
 
     /**
@@ -134,6 +135,9 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
                 self.insertAround('[', '](http://)');
             }
         },
+        pagelink: function() {
+            self.showPagelinkModal();
+        },
         email: function () {
             if (self.options.kirbytext) {
                 self.insertAround('(email: user@example.com text: ', ')');
@@ -214,6 +218,9 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
     }, {
         action: 'link',
         className: 'fa fa-link'
+    }, {
+        action: 'pagelink',
+        className: 'fa fa-file'
     }, {
         action: 'email',
         className: 'fa fa-envelope'
@@ -311,6 +318,7 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
 
         // Refresh CodeMirror DOM
         self.codemirror.refresh();
+          
     };
 
     /**
@@ -859,6 +867,30 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
      */
     this.showShortcutsModal = function () {
         self.modals.shortcuts.show();
+    };
+    
+    /**
+     * Show "Page Link" modal
+     *
+     */
+    this.showPagelinkModal = function() {
+        self.modals.pagelink.show();
+        
+        $(".page .slidedown.active, .page .link").off('click');
+        
+        // Slide down subpages on click on page
+        $(".page .slidedown.active").on('click', function() {
+          $(this).toggleClass("open")
+                 .closest(".page").children(".subpages").slideToggle("open");
+        });
+        
+        // Create and insert link on click on page link
+        $(".page .link").on('click', function() {
+          var slug = $(this).data("link");
+          var name = $(this).siblings(".name").html();
+          self.insert('(link: ' + slug + ' text: ' + name + ')');
+          self.modals.pagelink.hide();
+        });
     };
 
     /**

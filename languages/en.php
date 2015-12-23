@@ -50,6 +50,7 @@ return [
     'modal.shortcuts.action.orderedList'   => 'Ordered List',
     'modal.shortcuts.action.image'         => 'Image',
     'modal.shortcuts.action.link'          => 'Link',
+    'modal.shortcuts.action.pagelink'      => 'Choose Page',
     'modal.shortcuts.action.email'         => 'Email',
 
 ];
