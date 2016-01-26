@@ -121,15 +121,6 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
         blockquote: function () {
             self.toggleBefore('>', false);
         },
-        farbe1: function() {
-            self.toggleAround('(rot: ', ')');
-        },
-        farbe2: function() {
-            self.toggleAround('(gruen: ', ')');
-        },
-        farbe3: function() {
-            self.toggleAround('(gelb: ', ')');
-        },
         orderedList: function () {
             self.insertBefore('1. ', 3);
         },
@@ -212,15 +203,6 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
     }, {
         action: 'strikethrough',
         className: 'fa fa-strikethrough'
-    }, {
-        action: 'farbe1',
-        className: 'fa fa-font'
-    }, {
-        action: 'farbe2',
-        className: 'fa fa-font'
-    }, {
-        action: 'farbe3',
-        className: 'fa fa-font'
     }, {
         action: 'blockquote',
         className: 'fa fa-quote-left'
