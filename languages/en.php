@@ -19,6 +19,7 @@ return [
     'action.tooltip.unorderedList' => 'Unordered List',
     'action.tooltip.orderedList'   => 'Ordered List',
     'action.tooltip.link'          => 'Insert Link',
+    'action.tooltip.pagelink'      => 'Insert Page Link',
     'action.tooltip.email'         => 'Insert Email Link',
     'action.tooltip.image'         => 'Insert Image',
     'action.tooltip.line'          => 'Insert Horizontal Line',
