@@ -57,7 +57,7 @@ class MarkdownField extends InputField
      * @since 1.1.0
      * @var string
      */
-    protected $header1 = 'h1';
+    protected $header1 = 'h2';
 
     /**
      * Option: Header 2.
@@ -65,7 +65,7 @@ class MarkdownField extends InputField
      * @since 1.1.0
      * @var string
      */
-    protected $header2 = 'h2';
+    protected $header2 = 'h3';
 
     /**
      * Option: Available Tools.
@@ -78,8 +78,9 @@ class MarkdownField extends InputField
         'header2',
         'bold',
         'italic',
-        'strikethrough',
-        'blockquote',
+        'farbe1',
+        'farbe2',
+        'farbe3',
         'unorderedList',
         'orderedList',
         'link',
@@ -119,13 +120,16 @@ class MarkdownField extends InputField
      * @var array
      */
     protected $defaultValues = [
-        'header1' => 'h1',
-        'header2' => 'h2',
+        'header1' => 'h2',
+        'header2' => 'h3',
         'tools'   => [
             'header1',
             'header2',
             'bold',
             'italic',
+            'farbe1',
+            'farbe2',
+            'farbe3',
             'blockquote',
             'unorderedList',
             'orderedList',

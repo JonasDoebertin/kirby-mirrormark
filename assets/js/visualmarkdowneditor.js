@@ -121,6 +121,15 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
         blockquote: function () {
             self.toggleBefore('>', false);
         },
+        farbe1: function() {
+            self.toggleAround('(rot: ', ')');
+        },
+        farbe2: function() {
+            self.toggleAround('(gruen: ', ')');
+        },
+        farbe3: function() {
+            self.toggleAround('(gelb: ', ')');
+        },
         orderedList: function () {
             self.insertBefore('1. ', 3);
         },
@@ -129,7 +138,7 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
         },
         link: function () {
             if (self.options.kirbytext) {
-                self.insertAround('(link: http:// text: ', ')');
+                self.insertAround('(link: http:// text: ', ' popup: yes)');
             }
             else {
                 self.insertAround('[', '](http://)');
@@ -175,7 +184,6 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
         licenseLink: function () {
             window.open('https://gumroad.com/l/visualmarkdown');
         },
-        help: function () {},
         fullscreen: function () {
             self.toggleFullscreenMode();
         }
@@ -205,6 +213,15 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
         action: 'strikethrough',
         className: 'fa fa-strikethrough'
     }, {
+        action: 'farbe1',
+        className: 'fa fa-font'
+    }, {
+        action: 'farbe2',
+        className: 'fa fa-font'
+    }, {
+        action: 'farbe3',
+        className: 'fa fa-font'
+    }, {
         action: 'blockquote',
         className: 'fa fa-quote-left'
     }, {
@@ -230,29 +247,6 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
     }, {
         action: 'line',
         className: 'fa fa-minus'
-    }, {
-        action: 'divider'
-    }, {
-        action: 'help',
-        className: 'fa fa-question-circle',
-        nested: [{
-            action: 'shortcutsModal',
-            showName: true
-        }, {
-            action: 'markdownLink',
-            showName: true
-        }, {
-            action: 'kirbytextLink',
-            showName: true
-        }, {
-            action: 'divider'
-        }, {
-            action: 'issuesLink',
-            showName: true
-        }, {
-            action: 'licenseLink',
-            showName: true
-        }]
     }];
 
     /**
@@ -888,7 +882,7 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
         $(".page .link").on('click', function() {
           var slug = $(this).data("link");
           var name = $(this).siblings(".name").html();
-          self.insert('(link: ' + slug + ' text: ' + name + ')');
+          self.insertAround('(link:' + slug + ' text: ', ')');
           self.modals.pagelink.hide();
         });
     };
