@@ -161,6 +161,12 @@ class MarkdownField extends InputField
         } else {
             $this->translation = include $baseDir . 'en.php';
         }
+
+        $this->header1 = c::get('markdown.default.header1', $this->header1);
+        $this->header2 = c::get('markdown.default.header2', $this->header2);
+
+        $this->validateHeaderOption('header1', $this->header1);
+        $this->validateHeaderOption('header2', $this->header2);
     }
 
     /**
@@ -266,7 +272,7 @@ class MarkdownField extends InputField
         $input->tag('textarea');
         $input->removeAttr('type');
         $input->removeAttr('value');
-        $input->html($this->value() ?: false);
+        $input->html($this->value() ? htmlentities($this->value(), ENT_NOQUOTES, 'UTF-8') : false);
         $input->data([
             'field'         => 'markdownfield',
             'toolbar'       => ($this->toolbar) ? 'true' : 'false',
