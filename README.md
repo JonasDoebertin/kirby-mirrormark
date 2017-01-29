@@ -35,6 +35,8 @@ site/
 	fields/
 		markdown/
 			assets/
+			languages/
+			partials/
 			markdown.php
 ```
 
