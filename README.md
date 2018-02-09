@@ -32,10 +32,10 @@ If not already existing, add a new `fields` folder to your `site` directory. The
 
 ```
 site/
-	fields/
-		markdown/
-			assets/
-			markdown.php
+  fields/
+    markdown/
+      assets/
+      markdown.php
 ```
 
 ### Git Submodule
@@ -63,12 +63,12 @@ Using the field in your blueprint couldn't be easier. After installing the plugi
 
 ```
 fields:
-    title:
-        label: Post Title
-        type:  text
-    text:
-        label: Text
-        type:  markdown
+  title:
+    label: Post Title
+    type:  text
+  text:
+    label: Text
+    type:  markdown
 ```
 
 *Fields related part of the blueprint for the setup shown in the screenshot.*
@@ -79,10 +79,10 @@ You don't have to change your templates in order to support this field. Just use
 
 ```html
 <article>
-	<h1>
-		<?php echo $page->title()->html() ?>
-	</h1>
-	<?php echo $page->text()->kirbytext() ?>
+  <h1>
+    <?php echo $page->title()->html() ?>
+  </h1>
+  <?php echo $page->text()->kirbytext() ?>
 </article>
 ```
 
@@ -94,10 +94,10 @@ Show / hide the editor toolbar. Set this to `hide` if you want the toolbar to di
 
 ```
 fields:
-    text:
-        label:   Text
-        type:    markdown
-		toolbar: hide
+  text:
+    label:   Text
+    type:    markdown
+    toolbar: hide
 ```
 
 ### tools
@@ -106,14 +106,14 @@ With this option you may select which tools you want to show up in the toolbar. 
 
 ```
 fields:
-    text:
-        label:   Text
-        type:    markdown
-		tools:
-			- bold
-			- italic
-			- orderedList
-			- unorderedList
+  text:
+    label: Text
+    type:  markdown
+    tools:
+      - bold
+      - italic
+      - orderedList
+      - unorderedList
 ```
 
 **Available tools:**
@@ -135,11 +135,11 @@ Specify the header levels to be used with the *H1* and *H2* toolbar buttons (`h1
 
 ```
 fields:
-    text:
-        label:   Text
-        type:    markdown
-		header1: h2
-		header2: h3
+  text:
+    label:   Text
+    type:    markdown
+    header1: h2
+    header2: h3
 ```
 
 *If you have any suggestions for further configuration options, [please let me know](https://github.com/JonasDoebertin/kirby-visual-markdown/issues/new).*
